@@ -68,10 +68,6 @@ local Button = Category:AddButton("Gun", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/GUN%20RAW'))()
 end)
 
-local Button = Category:AddButton("Platform", function()
-    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/UFO%20RAW'))()
-end)
-
 local Button = Category:AddButton("FNF Boomboxes", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/FNF%20RAW'))()
 end)
@@ -98,10 +94,6 @@ end)
 
 local Button = Category:AddButton("Chaos Deus Sword", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/chaos%20RAW'))()
-end)
-
-local Button = Category:AddButton("Torch", function()
-    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/Torch%20RAW'))()
 end)
 
 local Button = Category:AddButton("Arcade", function()
@@ -137,6 +129,14 @@ local Button = Category:AddButton("Sniper", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/SNIPER'))()
 end)
 
+local Button = Category:AddButton("Giant Titan", function()
+    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/katana'))()
+end)
+
+local Button = Category:AddButton("Katana", function()
+    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/katana'))()
+end)
+
 local Category = Tab:AddCategory("Animations")
 --anims
 Category:AddLabel("All anims will be revamped due to some being broken lol.")
@@ -162,7 +162,19 @@ end)]]
 
 local Tab = Gui:AddTab("R15")
 
-local Category = Tab:AddCategory("Coming soon!!!11")
+local Category = Tab:AddCategory("Added only 3 because on R15 u can't delete mesh :sob:")
+
+local Button = Category:AddButton("Katana", function()
+    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/r15_katana'))()
+end)
+
+local Button = Category:AddButton("Sword Swither", function()
+    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/r15_sword'))()
+end)
+
+local Button = Category:AddButton("Sniper", function()
+    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/r15_sniper'))()
+end)
 
 local Tab = Gui:AddTab("Credits")
 
