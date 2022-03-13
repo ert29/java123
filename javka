@@ -130,7 +130,7 @@ local Button = Category:AddButton("Sniper", function()
 end)
 
 local Button = Category:AddButton("Giant Titan", function()
-    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/katana'))()
+    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/BIG%20TITAN%20RAW'))()
 end)
 
 local Button = Category:AddButton("Katana", function()
