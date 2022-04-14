@@ -1,8 +1,3 @@
-local A_1 = "~ Loading XTREME V2 ~"
-local A_2 = "All"
-local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
-Event:FireServer(A_1, A_2)
-
 local player = game.Players.LocalPlayer
 player.Character.Head.Mesh:Destroy()
 
