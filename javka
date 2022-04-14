@@ -1,196 +1,120 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/IreXion-UI-Library/main/Revamp/IreXion%20UI%20Library"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Kadium Hub")
 
-local Gui = Library:AddGui({
-    Title = {"Kadium", "Hub"},
-    ThemeColor = Color3.fromRGB(255, 255, 255),
-    ToggleKey = Enum.KeyCode.RightShift,
-})
+local Tab = Window:NewTab("Home")
+local Section = Tab:NewSection("Update Log:")
+Section:NewLabel("Using Kavo UI and new beta script!")
 
-local Tab = Gui:AddTab("Home")
-
-local Category = Tab:AddCategory("Home Page")
-
-Category:AddLabel("Current Version: V2.38")
-
-Library:Notify("Thanks For Using Kadium Hub!", function(yesno)
-    print("User selected:", yesno)
-end)
-
-local Tab = Gui:AddTab("Local Player")
-
-local Category = Tab:AddCategory("Local Player Page")
-
-Category:AddLabel("Use At Ur Own Risk Some Games May Have Anti-Cheat")
-
-local Button = Category:AddButton("Reset Character", function()
-    print("Button pressed")
-end)
-
-local Slider = Category:AddSlider("WalkSpeed", 16, 250, 16, true, function(value)
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
-end)
-
-local Slider = Category:AddSlider("JumpPower", 50, 250, 50, true, function(value)
-game.Players.LocalPlayer.Character.Humanoid.JumpPower = value
-end)
-
-local Slider = Category:AddSlider("HipHeight", 0, 250, 0, true, function(value)
-game.Players.LocalPlayer.Character.Humanoid.HipHeight = value
-end)
-
-local PLIST = {}
-
-for i,v in pairs(game:GetService("Players"):GetPlayers()) do
-    table.insert(PLIST,v.DisplayName)
-end
-
-local Dropdown = Category:AddDropdown("Game Player List",PLIST,function(plist)
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  game.Players[plist].Character.HumanoidRootPart.CFrame * CFrame.new(0,2,1)
-end)
-
-local Tab = Gui:AddTab("R6")
-
-local Category = Tab:AddCategory("FE Scripts")
---scripts
-local Button = Category:AddButton("Blocker", function()
+local Tab = Window:NewTab("Scripts")
+local Section = Tab:NewSection("R6 Scripts")
+Section:NewButton("Blocker", "Spinning block!", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/BLOCKER%20RAW'))()
 end)
-
-local Button = Category:AddButton("Fake VR", function()
+Section:NewButton("Fake VR", "Vr buddy!", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/FAKE%20VR%20RAW'))()
 end)
-
-local Button = Category:AddButton("DJ Booth", function()
+Section:NewButton("DJ Booth", "Now ur an DJ!", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/DJ%20RAW'))()
 end)
-
-local Button = Category:AddButton("Gun", function()
+Section:NewButton("Gun", "Pew Pew!", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/GUN%20RAW'))()
 end)
-
-local Button = Category:AddButton("FNF Boomboxes", function()
+Section:NewButton("Friday Night Funkin", "rap batel me noob", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/FNF%20RAW'))()
 end)
-
-local Button = Category:AddButton("Pogo", function()
+Section:NewButton("Pogo", "Boing Boing", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/POGO%20RAW'))()
 end)
-
-local Button = Category:AddButton("Chair", function()
+Section:NewButton("Chair", "intense sitting", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/scripting/main/CHAIR.lua'))()
 end)
-
-local Button = Category:AddButton("Pot", function()
+Section:NewButton("Pot", "minecraft witch lol", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/POT%20RAW'))()
 end)
-
-local Button = Category:AddButton("Fire Sword", function()
+Section:NewButton("Fire Sword", "No way!1 Fire Aspect II!", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/FIRE%20SWORD%20RAW'))()
 end)
-
-local Button = Category:AddButton("Long Torso", function()
+Section:NewButton("Long Torso", "Oh no creepy man!", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/LONG%20TORSO%20RAW'))()
 end)
-
-local Button = Category:AddButton("Chaos Deus Sword", function()
+Section:NewButton("Chaos Deus Sword", "Nice sword bro!", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/chaos%20RAW'))()
 end)
-
-local Button = Category:AddButton("Arcade", function()
+Section:NewButton("Arcade", "gaming on top!", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/ARCADE%20RAW'))()
 end)
-
-local Button = Category:AddButton("Rune", function()
+Section:NewButton("Rune", "Global warming?", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/RUNE%20RAW'))()
 end)
-
-local Button = Category:AddButton("AOT Swords", function()
+Section:NewButton("AOT Swords", "Attack on titan!", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/scripting/main/aot'))()
 end)
-
-local Button = Category:AddButton("Sword Switcher", function()
+Section:NewButton("Sword Switcher", "Nice daggers bro", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/scripting/main/SWORDS.lua'))()
 end)
-
-
-local Button = Category:AddButton("Hammer", function()
+Section:NewButton("Hammer", "no", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/scripting/main/HAMMER.lua'))()
 end)
-
-local Button = Category:AddButton("Actual VR", function()
-    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/scripting/main/FAKE%20VR1.lua'))()
-end)
-
-local Button = Category:AddButton("Scythe", function()
+Section:NewButton("Scythe", "soul bounding moment!", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/SCYTHE'))()
 end)
-
-local Button = Category:AddButton("Sniper", function()
+Section:NewButton("Sniper", "stream sniper!1", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/SNIPER'))()
 end)
-
-local Button = Category:AddButton("Giant Titan", function()
-    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/BIG%20TITAN%20RAW'))()
+Section:NewButton("Real VR", "it's actual vr so yeah", function()
+    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/scripting/main/FAKE%20VR1.lua'))()
 end)
-
-local Button = Category:AddButton("Katana", function()
+Section:NewButton("Katana", "ninjago!", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/katana'))()
 end)
-
-local Category = Tab:AddCategory("Animations")
---anims
-Category:AddLabel("All anims will be revamped due to some being broken lol.")
---[[local Button = Category:AddButton("Box Man", function()
-    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/Box%20Man%20RAW'))()
+Section:NewButton("XTREME V2 (WILL REMOVE SOON)", "my private script 😤!", function()
+    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/java123/main/XTREME%20V2%20B.lua'))()
+end)
+Section:NewButton("Basketball", "jordan high og 1 travis scott!", function()
+    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/java123/main/bsk.lua'))()
+end)
+Section:NewButton("Titan V1", "Just a expensive titan!", function()
+    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/BIG%20TITAN%20RAW'))()
+end)
+Section:NewButton("Titan V2 (SOON)", "Made using Nexo V4 damn!11", function()
+    print("soon")
 end)
 
-local Button = Category:AddButton("Helicopter", function()
-    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/helicopter%20RAW'))()
-end)
-
-local Button = Category:AddButton("Levitate", function()
-    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/fly%20anim%20RAW'))()
-end)
-
-local Button = Category:AddButton("Scared Man", function()
-    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/scared%20RAW'))()
-end)
-
-local Button = Category:AddButton("Powerful Walk", function()
-    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/POWERFUL%20RAW'))()
-end)]]
-
-local Tab = Gui:AddTab("R15")
-
-local Category = Tab:AddCategory("Added only 3 because on R15 u can't delete mesh :sob:")
-
-local Button = Category:AddButton("Katana", function()
+local Section = Tab:NewSection("R15 Scripts")
+Section:NewButton("Katana", "ninjago in r15!", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/r15_katana'))()
 end)
-
-local Button = Category:AddButton("Sword Swither", function()
+Section:NewButton("Basketball", "nike air jordan 1 mid tupac?/!1", function()
+    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/java123/main/bsk%20r15.lua'))()
+end)
+Section:NewButton("Sword Switcher", "daggers in r15!", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/r15_sword'))()
 end)
-
-local Button = Category:AddButton("Sniper", function()
+Section:NewButton("Sniper", "snipe that guy bro!", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/r15_sniper'))()
 end)
+local Section = Tab:NewSection("Humanoid Scripts")
+Section:NewSlider("WalkSpeed", "Change ur WalkSpeed!", 250, 16, function(sp) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = sp
+end)
+Section:NewSlider("JumpHeight", "Change ur JumpHeight!", 500, 0, function(jh) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpHeight = jh
+end)
+Section:NewSlider("HipHeight", "Change ur HipHeight!", 500, 2, function(hh) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.HipHeight = hh
+end)
 
-local Tab = Gui:AddTab("Credits")
-
-local Category = Tab:AddCategory("Credits Page")
-
-local Button = Category:AddButton("Discord Invite Link", function()
+local Tab = Window:NewTab("Credits")
+local Section = Tab:NewSection("Credits:")
+Section:NewLabel("the ka#6246: Kadium Owner")
+Section:NewLabel("Mage Accelerator#8589: Helping with scripts")
+Section:NewLabel("Nexo Animator: Used to make scripts")
+Section:NewButton("Discord Server", "Copys discord server invite link!", function()
     setclipboard("dsc.gg/kadium")
     toclipboard("dsc.gg/kadium")
 end)
-
-Button:AddToolTip("Copys Kadium's Discord Server Link!")
-
-Category:AddLabel("the ka | Original Kadium Owner/Script Creator")
-
-Category:AddLabel("weather#5762 | New Kadium Owner/Script Creator")
-
-Category:AddLabel("Mage Accelerator#8589 | Kadium's Animator Maker")
-
-Category:AddLabel("Nexo Animator | Used To Make Scripts")
+local Tab = Window:NewTab("Settings")
+local Section = Tab:NewSection("Settings:")
+Section:NewKeybind("UI Keybind", "Change UI keybind", Enum.KeyCode.RightControl, function()
+	Library:ToggleUI()
+end)
