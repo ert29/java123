@@ -1,9 +1,17 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Kadium Hub")
+local colors = {
+    SchemeColor = Color3.fromRGB(74, 99, 135),
+    Background = Color3.fromRGB(36, 37, 43),
+    Header = Color3.fromRGB(28, 29, 34),
+    TextColor = Color3.fromRGB(255,255,255),
+    ElementColor = Color3.fromRGB(32, 32, 38)
+}
+local Window = Library.CreateLib("Kadium Hub", colors)
 
 local Tab = Window:NewTab("Home")
 local Section = Tab:NewSection("Update Log:")
-Section:NewLabel("Using Kavo UI and new beta script!")
+Section:NewLabel("Biggest Kadium Update Ever!")
+Section:NewLabel("Added Many Scripts into new tab called Structures")
 
 local Tab = Window:NewTab("Scripts")
 local Section = Tab:NewSection("R6 Scripts")
@@ -93,6 +101,25 @@ end)
 Section:NewButton("Sniper", "snipe that guy bro!", function()
     loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/hi/main/r15_sniper'))()
 end)
+
+local Section = Tab:NewSection("Structures")
+Section:NewButton("Human", "God Damn What A Big Guy!", function()
+    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/java321/main/titanR'))()
+    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/java321/main/titan'))()
+end)
+Section:NewButton("Torch", "Welp U Can See Now?", function()
+    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/java321/main/poleR'))()
+    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/java321/main/pole'))()
+end)
+Section:NewButton("PP", "Funny xd.", function()
+    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/java321/main/ppR'))()
+    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/java321/main/pp'))()
+end)
+Section:NewButton("Tank", "pstt its gonna shoot soon ;)", function()
+    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/java321/main/tankR'))()
+    loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/ert29/java321/main/tank'))()
+end)
+
 local Section = Tab:NewSection("Humanoid Scripts")
 Section:NewSlider("WalkSpeed", "Change ur WalkSpeed!", 250, 16, function(sp) -- 500 (MaxValue) | 0 (MinValue)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = sp
@@ -107,8 +134,8 @@ end)
 local Tab = Window:NewTab("Credits")
 local Section = Tab:NewSection("Credits:")
 Section:NewLabel("the ka#6246: Kadium Owner")
-Section:NewLabel("Mage Accelerator#8589: Helping with scripts")
-Section:NewLabel("Nexo Animator: Used to make scripts")
+Section:NewLabel("Mage Accelerator#8589: Helping With Scripts")
+Section:NewLabel("Nexo Animator: Used To Make Scripts")
 Section:NewButton("Discord Server", "Copys discord server invite link!", function()
     setclipboard("dsc.gg/kadium")
     toclipboard("dsc.gg/kadium")
@@ -118,3 +145,14 @@ local Section = Tab:NewSection("Settings:")
 Section:NewKeybind("UI Keybind", "Change UI keybind", Enum.KeyCode.RightControl, function()
 	Library:ToggleUI()
 end)
+Section:NewButton("Rejoin", "Rejoins The Server!", function()
+    local tpservice= game:GetService("TeleportService")
+    local plr = game.Players.LocalPlayer
+    tpservice:Teleport(game.PlaceId, plr)
+end)
+local Section = Tab:NewSection("Theme Changing:")
+for theme, color in pairs(colors) do
+    Section:NewColorPicker(theme, "Change your "..theme, color, function(color3)
+        Library:ChangeColor(theme, color3)
+    end)
+end
